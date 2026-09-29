@@ -1,0 +1,250 @@
+﻿/* ===================================================
+   Saif — Custom Animations & Micro-interactions
+   =================================================== */
+
+/* Spin animation for vinyl disc */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Audio bar eq-bounce animation */
+@keyframes eq-bounce-1 {
+  0%, 100% { height: 20%; }
+  50% { height: 90%; }
+}
+
+@keyframes eq-bounce-2 {
+  0%, 100% { height: 60%; }
+  25% { height: 15%; }
+  75% { height: 100%; }
+}
+
+@keyframes eq-bounce-3 {
+  0%, 100% { height: 40%; }
+  33% { height: 80%; }
+  66% { height: 25%; }
+}
+
+/* Soft radial glow pulse for album art when playing */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px 0px rgba(255, 138, 31, 0.3); }
+  50% { box-shadow: 0 0 40px 8px rgba(255, 138, 31, 0.55); }
+}
+
+/* Floating animation for particles */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-14px) rotate(10deg); opacity: 1; }
+}
+
+/* Slide-up entry */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+/* Fade-in */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scale-in */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Pulse orange glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.7; width: 30%; }
+  50% { opacity: 1; width: 100%; }
+}
+
+/* Page fade-in transition */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================================================
+   Utility Classes for Animations
+   =================================================== */
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+.animate-eq-bar-1 {
+  animation: eq-bounce-1 0.8s ease-in-out infinite;
+}
+
+.animate-eq-bar-2 {
+  animation: eq-bounce-2 0.9s ease-in-out infinite;
+}
+
+.animate-eq-bar-3 {
+  animation: eq-bounce-3 0.7s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-page-enter {
+  animation: page-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.03) 25%,
+    rgba(255,255,255,0.07) 50%,
+    rgba(255,255,255,0.03) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ===================================================
+   Premium Glassmorphism Components
+   =================================================== */
+
+.Saif-card {
+  background: rgba(41, 45, 54, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.Saif-card:hover {
+  border-color: rgba(255, 138, 31, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Focus ring style for accessibility */
+.Saif-focus:focus-visible {
+  outline: 2px solid #FF8A1F;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Orange gradient text */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF9D3D, #FF8A1F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Vinyl record visual */
+.vinyl-disc {
+  background: repeating-radial-gradient(
+    circle,
+    #1a1a1a 0px,
+    #1a1a1a 6px,
+    #2a2a2a 6px,
+    #2a2a2a 12px
+  );
+  border-radius: 50%;
+  position: relative;
+}
+
+.vinyl-disc::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #333 0%, transparent 28%);
+}
+
+/* Orange accent underline */
+.Saif-underline {
+  position: relative;
+}
+.Saif-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #FF8A1F, #FF9D3D);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.Saif-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Now Playing glow border */
+.now-playing-border {
+  box-shadow:
+    0 0 0 2px rgba(255, 138, 31, 0.5),
+    0 0 16px rgba(255, 138, 31, 0.25);
+}
+
+/* Transition presets */
+.transition-premium {
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Active state press */
+.press-effect:active {
+  transform: scale(0.95);
+}
+
+/* Gradient border trick */
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+  background: #242731;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 138, 31, 0.4), transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}

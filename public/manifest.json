@@ -1,0 +1,17 @@
+﻿{
+  "name": "Saif — Modern Music Player",
+  "short_name": "Saif",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1D2028",
+  "theme_color": "#FF8A1F",
+  "description": "A premium modern music player with playlists, lyrics, queue management, audio visualization and advanced playback controls.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
